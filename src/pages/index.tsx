@@ -23,17 +23,28 @@ const Home: React.FC<Props> = ({ recentPosts }) => {
 	return (
 		<div className={styles.container}>
 			<Head>
-				<title>Blog App</title>
+				<title>Next.js Blog</title>
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>Blog App</h1>
+				<h1 className={styles.title}>Next.js Blog</h1>
 
 				<p className={styles.description}>
-					Read all posts{' '}
-					<Link href="/posts">
-						<a>here!</a>
-					</Link>
+					A simple blog app made with the{' '}
+					<Link href="https://nextjs.org">
+						<a>Next.js</a>
+					</Link>{' '}
+					framework.
+				</p>
+				<br />
+
+				<p className={styles.description}>
+					<strong>
+						Read all posts{' '}
+						<Link href="/posts">
+							<a>here!</a>
+						</Link>
+					</strong>
 				</p>
 
 				<div className={styles.postsContainer}>
