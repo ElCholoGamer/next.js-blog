@@ -10,6 +10,7 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"date-fns": "^2.16.1",
 		"mongoose": "^5.11.12",
 		"next": "10.0.5",
 		"next-connect": "^0.9.1",
