@@ -1,7 +1,11 @@
-import db from '../middleware/db';
+import db from './db';
 import Post, { IPost } from '../models/post';
 
 export type PostInfo = ReturnType<IPost['toJSON']>;
+
+export async function getAllPosts(): Promise<PostInfo[]> {
+	await db();
+}
 
 export async function getRecentPosts(days = 1): Promise<PostInfo[]> {
 	await db();

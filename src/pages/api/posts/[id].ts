@@ -1,6 +1,6 @@
 import next, { NextApiRequest, NextApiResponse } from 'next';
 import nc from 'next-connect';
-import db from '../../../middleware/db';
+import db from '../../../lib/db';
 import Post, { IPost } from '../../../models/post';
 
 type PostRequest = NextApiRequest & { post: IPost };

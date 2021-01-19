@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import nc from 'next-connect';
-import db from '../../../middleware/db';
+import db from '../../../lib/db';
 import Post from '../../../models/post';
 
 const handler = nc<NextApiRequest, NextApiResponse>()
