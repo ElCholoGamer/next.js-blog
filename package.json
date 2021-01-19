@@ -1,6 +1,6 @@
 {
-	"name": "nextjs-blog",
-	"description": "A simple blog app to practice with NextJS",
+	"name": "next.js-blog",
+	"description": "A simple blog app to practice with Next.js",
 	"version": "1.0.0",
 	"private": true,
 	"license": "MIT",
@@ -8,6 +8,10 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start"
+	},
+	"repository": {
+		"type": "git",
+		"directory": "https://github.com/ElCholoGamer/next.js-blog.git"
 	},
 	"dependencies": {
 		"date-fns": "^2.16.1",
