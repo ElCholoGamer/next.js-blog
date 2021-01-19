@@ -10,20 +10,27 @@ const handler = nc<NextApiRequest, NextApiResponse>()
 		res.json(posts);
 	})
 	.post(async (req, res) => {
-		const { author, content } = req.body;
+		await db();
+		const { title, author, content } = req.body;
 
-		if (typeof author !== 'string' || typeof content !== 'string') {
+		if (
+			typeof title !== 'string' ||
+			typeof author !== 'string' ||
+			typeof content !== 'string'
+		) {
 			return res.status(400).json({
 				status: 400,
 				message: 'Invalid request body.',
 			});
 		}
 
-		const post = await Post.create({
+		const post = new Post({
+			title,
 			author,
 			content,
 		});
 
+		await post.save();
 		res.json(post);
 	});
 
