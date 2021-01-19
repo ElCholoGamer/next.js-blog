@@ -1,3 +1,3 @@
-# NextJS Blog
+# Next.js Blog
 
-A web app to practice with NextJS
+A simple blog app to practice with Next.js.
