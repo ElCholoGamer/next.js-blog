@@ -20,7 +20,7 @@ const handler = nc<PostRequest, NextApiResponse>()
 		req.post = post;
 		next();
 	})
-	.get(async (req, res) => res.json(req.post))
+	.get((req, res) => res.json(req.post))
 	.delete(async (req, res) => {
 		await req.post.deleteOne();
 		res.json({
