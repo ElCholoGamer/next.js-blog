@@ -31,3 +31,12 @@
 	padding: 20px;
 	margin: 10px 0;
 }
+
+.content * {
+	max-width: 100%;
+}
+
+.content img {
+	margin: 30px 0;
+	border-radius: 5px;
+}
