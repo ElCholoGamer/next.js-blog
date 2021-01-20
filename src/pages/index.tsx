@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import DateTime from '../components/date-time';
+import Layout from '../components/layout';
 import { getRecentPosts, PostInfo } from '../lib/posts';
 import styles from '../styles/Home.module.css';
 
@@ -20,7 +21,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 };
 
 const Home: React.FC<Props> = ({ recentPosts }) => (
-	<div className={styles.container}>
+	<Layout>
 		<Head>
 			<title>Next.js Blog</title>
 		</Head>
@@ -78,7 +79,7 @@ const Home: React.FC<Props> = ({ recentPosts }) => (
 				</div>
 			</div>
 		</main>
-	</div>
+	</Layout>
 );
 
 export default Home;
