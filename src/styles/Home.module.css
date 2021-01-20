@@ -7,15 +7,6 @@
 	align-items: center;
 }
 
-.main a {
-	color: #0070f3;
-	text-decoration: none;
-}
-
-.main a:hover {
-	text-decoration: underline;
-}
-
 .main hr {
 	border: 1px solid gray;
 }
