@@ -8,11 +8,13 @@ import { useRef } from 'react';
 import DateTime from '../../components/date-time';
 
 interface Props {
-	post: PostInfo | null;
+	post: PostInfo;
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async ctx => {
 	const post = await getPostById(ctx.params?.id);
+	if (!post) return { notFound: true };
+
 	return {
 		props: {
 			post,
@@ -23,7 +25,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ctx => {
 const Post: React.FC<Props> = ({ post }) => {
 	const md = useRef(new Remarkable());
 
-	const content = md.current.render(post!.content);
+	const content = md.current.render(post.content);
 	return (
 		<Layout>
 			<Head>
@@ -31,12 +33,12 @@ const Post: React.FC<Props> = ({ post }) => {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>{post?.title}</h1>
-				<p className={styles.author}>By {post?.author}</p>
+				<h1 className={styles.title}>{post.title}</h1>
+				<p className={styles.author}>By {post.author}</p>
 
 				<div className={styles.container}>
 					<small className={styles.date}>
-						<DateTime className={styles.dat} timestamp={post!.createdAt} />
+						<DateTime timestamp={post.createdAt} />
 					</small>
 					<div
 						className={styles.content}
