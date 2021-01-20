@@ -20,3 +20,10 @@ export async function getRecentPosts(days = 1): Promise<PostInfo[]> {
 	const posts = await Post.find({ createdAt: { $gte: offset } });
 	return formatPosts(posts);
 }
+
+export async function getPostById(id: any): Promise<PostInfo | null> {
+	await db();
+
+	const post = await Post.findById(id);
+	return post?.toJSON() ?? null;
+}

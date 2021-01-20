@@ -1,0 +1,33 @@
+.main {
+	padding-top: 5rem;
+	width: 100%;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	font-size: 3rem;
+}
+
+.author {
+	margin: 10px 0;
+}
+
+.container {
+	margin: 20px;
+	width: 800px;
+	max-width: 90vw;
+}
+
+.date {
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.content {
+	border: 1px solid black;
+	padding: 20px;
+	margin: 10px 0;
+}
